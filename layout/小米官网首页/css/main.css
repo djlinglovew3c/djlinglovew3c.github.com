@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* 小米官网样式文件 */
+
+body{ background:#fff;}
+
+/*头部开始*/
+.header{}
+.logo{height:113px;width:110px;background:url(../img/tit.jpg) no-repeat left center;text-indent:-999em;float:left; }
+.nav{ width:800px;height:36px;background:#fafafa;padding-right:36px;background:#fafafa;color:#8c8c8c;}
+.nav li{float:left;}
+.nav ul{float:left;}
+.nav1{height:36px;line-height:36px;color:#8c8c8c;float:right; margin-right:16px;}
+.nav3{height:36px;line-height:36px;color:#8c8c8c;float:right; margin-left:16px;}
+.nav2{float:right;height:36px;line-height:36px;}
+.nav li a{height:36px;line-height:36px;color:#8c8c8c;border-right:1px solid #dfdfdf;padding:0 18px;}
+.navlist .first{padding-left:none; margin-left:36px}
+ #last{border-right:none;padding-right:none;}
+/*---*/
+.logo-r{float:right;}
+.tit{margin:0 36px;width:800px;}
+.date{width:140px;height:52px;line-height:52px;color:#8c8c8c;background:url(../img/log4.jpg) no-repeat left center;padding-left:18px;}
+ .buycar{width:126px;position:relative;margin:0 auto;position:relative; }
+ .name{width:124px;height:55px;display:block;text-align:center;line-height:55px;background:url(../img/log2.jpg) no-repeat 20% center #ffdb3d;position:relative;z-index:1;}
+.img{float:right;padding-top:65px;}
+  .buycar:hover a{background:url(../img/11.jpg) no-repeat 20% center #fff;border:1px solid red;border-bottom:none;}
+ .showbox{width:332px; height:58px;right:0;top:55px;color:#ccc;text-align:center;line-height:58px;font-size:13px;position:absolute;display:none;}
+ .buycar:hover .showbox{display:block;border:1px solid red;}
+/*头部结束*/
+
+/*主体开始*/
+.content{ margin:0 36px;width:1200px;}
+.navname{width:180px;height:51px;color:#fff;font-size:18px;float:left;background:#ff4a00;padding-left:20px; line-height:51px;}
+.xiaominav{float:left;width:800px;height:51px;background:#404144;}
+.xiaominav li{float:left;margin-right:18px;line-height:51px;}
+.xiaominav a{color:#fff;font-size:14px;}
+.first-con{margin-left:7px;}
+
+
+/*主体结束*/
+
+/*尾部开始*/
+/*尾部结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

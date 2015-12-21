@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* 优酷音乐 */
+
+/*头部开始*/
+	.head1{width:974px;margin:0 auto 28px;}
+	.head1 h1{margin:19px 10px 0 0;}
+	.head1_l2{margin:25px 20px 0 0;}
+	.head1_l3{margin:25px 72px 0 0;;padding-left:22px;position:relative;}
+	.head1_l3_con{width:16px;height:15px;background:url(../img/header.png) -42px -3px;position:absolute;left:0;top:0;}
+	.head1_l3:hover .head1_l3_con{background-position:-102px -3px;}
+	
+	.head1_l4{margin-top:10px;}
+	.head1 h1 a{display:block;text-indent:-999em;background:url(../img/yklogo.png);width:140px;height:32px;}
+	.headtxt{width:228px;height:36px;outline:none;border:2px solid #a0a0a0;border-right:none;}
+	.headbtn{width:90px;height:40px;background:url(../img/header.png)0 -160px;outline:none;border:none;text-indent:-999em;}
+	.head1_l4_box{position:relative;}
+	.head1_l4_con{position:absolute;width:18px;height:18px;background:url(../img/rank.png)-2px -182px;left:206px;top:50%;margin-top:-4px;}
+	.headtxt_con{display:none;position:absolute;left:0;top:48px;border:2px solid #a0a0a0;width:220px;padding:4px;background:#fff;z-index:100;}
+	.headtxt_con a{display:block;height:30px;width:214px;text-align:center;line-height:30px;color:#bababa;font-size:12px;}
+	.headtxt_con_back1{background:#f66;width:20px;height:22px;color:#fff;text-align:center;line-height:22px;margin:4px 10px 0 6px;}
+	.headtxt_con a:hover{background:#f6f7fb;}
+	.headtxt_con_back2{background:#909090;width:20px;height:22px;color:#fff;text-align:center;line-height:22px;margin:4px 10px 0 6px;}
+	
+	.head1_r{margin-top:24px;}
+	.head1_r1{position:relative;padding:0 14px 0 20px;}
+	.head1_r a{display:block;}
+	.head1_r_con1{position:absolute;width:17px;height:16px;background:url(../img/header.png)-42px -22px;left:0; top:0;}
+	.head1_r_con2{position:absolute;width:8px;height:4px;background:url(../img/jiao.png);right:0;top:50%;height:-2px;transform:rotate(0deg);transition:transform 0.5s linear;}
+	.head1_r2{margin:0 22px;}
+	.head1_r3{margin-right:26px;}
+	.head1_r1:hover .head1_r_con1{background-position:-102px -22px;}
+	.head1_r1:hover .head1_r_con2{transform:rotate(180deg);}
+	.head1_r li{float:left;}
+	.head1_r4{padding:0 10px 0 22px;position:relative; margin-right:8px;}
+	.head1_r_con3{position:absolute;width:17px;height:16px;background:url(../img/header.png)-2px -2px;left:0; top:-2px;}
+	.head1_r_con4{position:absolute;width:2px;height:15px;background:url(../img/border1.png);right:0;top:-1px;}
+	.head1_r4:hover .head1_r_con3{background-position:-62px -2px;}
+	
+	
+	.head2{width:974px;margin:0 auto;border-bottom:3px solid #e6e6e6;}
+	.head2 li{float:left; margin-right:20px;}
+	.head2_l .main{border-bottom:3px solid #06a7e1;padding-bottom:10px;margin-bottom:-3px;}
+	.head2_l a{font-size:16px;}
+    .main a{color:#06a7e1;}
+	.main a:hover{color:#cc3311;}
+	.head2_l .head2_l_last{margin-right:28px;}
+	.head2_r a{color:#555;}
+	.head2_r a:hover{color:#cc3311;}
+	.head2_r1{position:relative;padding-right:12px;display:block;}
+	.head2_r_con1{position:absolute;width:8px;height:4px;background:url(../img/jiao.png);right:0;top:50%;height:-2px;transform:rotate(0deg);transition:transform 0.5s linear;}
+	.head2_r1:hover .head2_r_con1{transform:rotate(180deg);}
+	
+	.head3{width:974px;margin:0 auto;height:48px;}
+	.head3 li{float:left;margin-right:20px;margin-top:10px;}
+	.main1 a{color:#06a7e1;}
+	.main1 a:hover{color:#cc3311;}
+	
+	.banner{width:974px;margin:0 auto 20px;position:relative;}
+	.banner a{display:block; width:974px;display:none;}
+	.banner .banner_show{display:block;}
+	.banner ul{position:absolute;width:120px;height:12px;left:50%;margin-left:-60px;bottom:28px;}
+	.banner ul li{float:left;margin-right:8px;}
+	.banner li a{ display:block;width:12px;height:12px;background:url(../img/dian.png)-40px 0;}
+	.banner .banner_active a{background-position:0 0;}
+	.banner li a:hover{background-position:-20px 0;}
+	.banner .banner_active a:hover{background-position:0 0;}
+	
+	
+	.address{width:974px;margin:0 auto 40px;}
+	.zhuanji{width:200px;height:160px;margin-right:20px;background:url(../img/bs.jpg);position:relative;}
+	.zhuanji img{position:absolute;left:3px;top:7px;}
+	.zhuanji p{position:absolute;right:6px;bottom:0;line-height:24px;color:#ddd;font-weight:800;}
+	
+	.address_back{width:530px;height:22px;background:#f5f5f5;margin-bottom:20px;}
+	.address_con{width:530px;height:160px;}
+	.address_back h3{font-weight:bold;color:#fff;line-height:22px;padding:0 10px;background:#909090;display:inline-block;}
+	.address_list{width:}
+	.address_list li{float:left;margin-right:30px;}
+	.address_list1{margin-bottom:20px;}
+	.address_list2{margin-bottom:-12px;}
+	.address_list2 li{margin-bottom:12px;}
+	
+/*头部结束*/

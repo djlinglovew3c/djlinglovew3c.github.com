@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ padding:0; margin:0; line-height:100%;}
+body{ font-size:12px;font-family:"Microsoft Yahei"}
+a{color:#000; text-decoration:none;}
+a:hover{color:#b61d1d;}
+img{vertical-align:top;}
+li{ list-style:none;}
+h1,h2,h3,h4,h5,h6,b,strong{ font-weight:normal; font-size:100%;}
+i,em{ font-style:normal;}
+a img{border:none}
+.clearfix:after{display:block;clear:both; content:'';}
+.clearfix{zoom:1;}
+.fl{float:left}
+.fr{float:right;}
+textarea{resize:none;}
+th{border:1px solid red;padding:0;}
+table{border-collapse:collapse;}
+input{outline:none;}
+

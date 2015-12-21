@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* 淘宝-汇吃部分-董金玲 */
+/*头部开始*/
+	.head1_box{background:#f5f5f5;min-width:1190px;}
+	.head1{width:1190px;margin:0 auto;}
+	.head1 li{float:left;}
+	.head1 li a{display:block;line-height:36px;}
+	.head1 .head1_dl a{color:#f40;padding-right:10px;}
+	.head1_zc{padding-right:20px;}
+	.head1 li a:hover{color:#f40;}
+	.head1back{height:40px;background:url(../img/head1.jpg)repeat-x center 0;margin-bottom:14px;display:block;min-width:1190px;}
+	.head1_con1{width:4px;height:2px;background:url(../img/head_back1.png) 0 -53px;margin-top:15px;}
+	.head1_navlist_1 a{width:66px;}
+	.head1_navlist_2 a{position:relative;padding:0 34px;}
+	.head1_con2{width:12px;height:11px;background:url(../img/head_back1.png) 0 -37px;position:absolute;left:16px;top:12px;}
+	.head1_con3{width:4px;height:2px;background:url(../img/head_back1.png) 0 -34px;position:absolute;right:16px;top:15px;}
+	.head1_navlist_3 a{position:relative;padding:0 18px;}
+	.head1_con4{width:11px;height:10px;background:url(../img/head_back1.png) 0 -8px;position:absolute;left:0;top:12px;}
+	.head1_con5{width:4px;height:2px;background:url(../img/head_back1.png) 0 -53px;position:absolute;right:0;top:15px;}
+	.head1_navlist_4 a{position:relative;padding:0 24px 0 15px;}
+	.head1_con6{width:1px;height:12px;background:url(../img/head_back1.png) -1px -20px;position:absolute;right:0;top:12px;}
+	.head1_navlist_5 a{position:relative;padding:0 16px 0 12px;}
+	.head1_con7{width:4px;height:2px;background:url(../img/head_back1.png) 0  -53px;position:absolute;right:0;top:15px;}
+	.head1_navlist_6 a{position:relative;padding:0 28px 0 15px;}
+	.head1_con8{width:7px;height:6px;background:url(../img/head_back1.png) ;position:absolute;right:0;top:14px;}
+	.head1_navlist_7 a{position:relative;padding:0 28px 0 8px;}
+	.head1_con9{width:4px;height:2px;background:url(../img/head_back1.png) 0 -34px;position:absolute;right:10px;top:15px;}
+	
+	.head2{width:1190px;margin:0 auto;}
+	.head2 h1{padding:30px 0 35px 0;margin-right:110px;}
+	.head2 h1 a{display:block;width:140px;height:59px;background:url(../img/head_logo.jpg);text-indent:-999em;}
+	
+	.head_serchbox{padding-top:21px;margin-right:14px;}
+	.head_serchbox div{display:none;}
+	.head_serchbox .show{display:block;}
+	.head_serchbox_name li{float:left;width:50px;height:26px;line-height:26px;text-align:center;}
+	.head_serchbox_name .active{background:#f40;color:#fff;font-weight:bold;}
+	.headtxt{width:618px;height:36px;border:3px solid #f40;border-right:none;outline:none;}
+	.headbtn{width:101px;height:42px;background:#f40;outline:none;border:none;color:#fff;font-size:20px;}
+	.head2_con_m li{float:left;}
+	.head2_gjss{width:25px;padding-top:46px;line-height:18px;}
+	.head2_con_m li a{padding:8px 10px 0 0;display:block;}
+	.head2_con_m_color{color:#f40;}
+/*汇吃部分开始-董金玲（F)*/
+	.fbox{width:1188px;margin:0 auto 22px;border:1px solid #e8e8e8;}
+	.f1{padding:25px 12px 15px;width:371px;border-right:1px solid #e8e8e8;}
+	.f1_top{width:371px;margin-bottom:8px;}
+	.f1_top .f1_top_l{width:43px;height:23px;background:url(../img/f1.jpg); text-indent:-999em;}
+	.f1_top .f1_top_r{color:#9c9c9c;line-height:23px;}
+	.f1_top .f1_top_r:hover{color:#f40;}
+	.f1_bottom{width:371px;}
+	.f1_bottom_l{position:relative;}
+	.f1_bottom_l i{position:absolute;width:32px;height:26px;background:#db6118;color:#fff;text-align:center;line-height:26px;right:0;top:0;}
+	.f1_bottom_r{position:relative;}
+	.f1_bottom_r i{position:absolute;width:32px;height:26px;background:#b92c34;color:#fff;text-align:center;line-height:26px;right:0;top:0;}
+	.f2{padding:28px 12px 12px;width:371px;border-right:1px solid #e8e8e8;}
+	.f2_top{width:371px;margin-bottom:11px;}
+	.f2_top_l{width:56px;height:18px;background:url(../img/f2.jpg); text-indent:-999em;}
+ 	.f2_top_r{color:#9c9c9c;line-height:18px;padding-right:24px;position:relative;}
+	.f2_top_r i{position:absolute;width:14px;height:15px;background:url(../img/f3.jpg);right:2px;top:50%;margin-top:-7px;}
+	.f2_top_r:hover{color:#f40;}
+	.f2_bottom{width:371px;}
+	.f2_bottom_l{margin-right:10px;}
+	.f2_bottom_r{padding-top:5px;width:96px;}
+	.f2_bottom_r a{display:block;width:96px;text-align:center;line-height:32px;}
+	.f2_bottom_r a:hover{background:#f40;color:#fff;border-radius:4px;}
+	.f3{padding:25px 13px 19px;width:171px;border-right:1px solid #e8e8e8;}
+	.f3_top{width:171px;margin-bottom:11px;}
+	.f3_top_l{font-size:16px;font-weight:bold;line-height:18px;}
+	.f3_top_l:hover{color:#f40;}
+ 	.f3_top_r{color:#9c9c9c;line-height:18px;padding-right:24px;position:relative;}
+	.f3_top_r i{position:absolute;width:14px;height:15px;background:url(../img/f3.jpg);right:2px;top:0;}
+	.f3_top_r:hover{color:#f40;}
+	.f3_mbox{width:171px;overflow:hidden;height:113px;margin-bottom:15px;}
+	.f3_mbox ul{margin-right:-3px;}
+	.f3_mbox li{margin:0 3px 3px 0;}
+	.f3_bottom{width:171px;}
+	.f3_bottom_l{margin-right:10px;}
+	.f3_bottom_r{width:96px;padding-top:3px;line-height:20px;}
+	.f3_bottom_r:hover{color:#f40;}
+	.f3_bottom_r span{color:#8e8e8e;}
+	.f3_bottom_r p span{font-family:"Microsoft Yahei";color:#8e8e8e;padding-right:5px;}
+	.f3_bottom_r p{color:#f40;font-weight:bold;}
+	.f4{padding:27px 13px 7px;width:170px;}
+	.f4_top{width:170px;margin-bottom:13px;}
+	.f4_top_l{font-size:16px;font-weight:bold;line-height:16px;}
+	.f4_top_l:hover{color:#f40;}
+ 	.f4_top_r{color:#9c9c9c;line-height:16px;}
+	.f4_top_r:hover{color:#f40;}
+	.f4_m{display:block;width:170px;}
+	.f4_m p{line-height:32px;width:170px;text-align:center;}
+	.f4_m:hover{color:#f40;}
+	.f4_bottom{width:170px;}
+	.f4_bottom_l p{line-height:28px;width:80px;text-align:center;}
+	.f4_bottom_l:hover{color:#f40;}
+/*汇吃部分结束-董金玲*/

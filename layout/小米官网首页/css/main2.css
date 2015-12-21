@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* 小米网 */
+
+
+body{ background:#fff;}
+
+/*头部开始*/
+.head-top{height:36px;background:#fafafa;border-bottom:1px solid #dfdfdf;}
+.head-top-con{width:930px;margin:0 auto;}
+.head-top-con ul{padding:12px 0;float:left;}
+.head-top-con li{float:left;border-right:1px solid #dfdfdf;padding:0 16px 0 12px;}
+.head-top-con a{color:#8c8c8c;}
+.fr-list{margin-top:12px;}
+.fr-1{padding-right:17px;color:#8c8c8c;}
+.fr-2{padding-left:17px;color:#8c8c8c;}
+.head-top-con .last{border-right:none;}
+.head-con{width:930px;margin:22px auto 17px;}
+.logo{height:70px;width:70px;background:url(../img/tit.jpg) no-repeat center center;text-indent:-999em;}
+.logo a{height:100%;display:block;}
+.tip{height:18px;line-height:18px;background:url(../img/log4.jpg) no-repeat left center;position:absolute;right:0;top:0;padding-left:20px;}
+.searchbox{position:relative;}
+.buycar{position:relative;margin-left:10px;padding-top:30px;}
+.searchbox img{padding-top:30px;}
+.buycar a{width:75px;height:40px;display:block;text-align:center;line-height:55px;background:url(../img/log2.jpg) no-repeat 34px 14px #ffdb3d;position:relative;line-height:40px;z-index:1;padding-left:51px;}
+.buycar:hover a{background:url(../img/11.jpg) no-repeat 20% center #fff;border:1px solid red;border-bottom:none;}
+.showbox{width:332px; height:58px;color:#ccc;text-align:center;line-height:58px;font-size:13px;position:absolute;right:0;top:70px;display:none;}
+ .buycar:hover .showbox{ display:block;border:1px solid red;}
+ .nav{width:930px;background:#404144;margin:0 auto;}
+ .nav li{float:left;height:50px;}
+ .first{background:#ff4a00;width:228px;padding-left:20px;}
+ .nav a{display:block;padding:0 11px;font-size:16px;color:#fff;height:100%;line-height:50px;}
+ .nav .first a{display:block;padding:0;font-size:18px;width:228px;}
+ .nav a:hover{background:#ccc;}
+ .nav .first a:hover{background:none;}
+ /*头部结束*/
+ 
+ /*内容开始*/
+ .content{width:930px;margin:0 auto;margin-bottom:63px;}
+ .menu{width:246px;border:1px solid #dfdfdf;font-size:12px;}
+ .menu li{padding-left:20px;padding-bottom:20px;border-bottom:1px solid #dfdfdf;}
+ .menu h3{padding-top:18px;margin-bottom:10px;}
+ .menu h3 a{color:#ff4a00;font-size:13px;}
+ .banner{width:682px;}
+ .banner ul{height:173px;border-bottom:1px solid #ccc;}
+ .banner li{height:100%;width:226px;float:left;border-right:1px solid #ccc;overflow:hidden;}
+ .banner li img{margin-left:-52px;}
+ .book{font-size:18px;line-height:52px;}
+ .book a{float:right;font-size:14px;line-height:48px;}
+ .booklist{width:928px;border:1px solid #dfdfdf;border-right:none;}
+ .booklist li{width:308px;border-right:1px solid #dfdfdf;float:left;position:relative;}
+ .bookcon1{width:248px;padding:30px 30px 0;}
+ .bookcon1 h4{height:22px;line-height:100%;}
+ .bookcon1 p{height:22px;line-height:100%;}
+ .bookcon1 img {margin-top:39px;margin-left:53px;}
+ .bookcon2{margin:13px 10px;width:242px;height:44px;background:#f3f3f3;padding:10px 33px 0px 14px;line-height:20px;}
+ .bookcon3{width:19px;height:6px;background:url(../img/jiantou.jpg) no-repeat center center;position:absolute;left:50%;bottom:67px;}
+.likelist{margin-top:30px;margin-bottom:16px;font-size:20px;}
+ .like{width:928px;border:1px solid #dfdfdf;}
+ .likel{width:618px;border-right:1px solid #dfdfdf;}
+ .likeltop{padding-left:28px;height:307px;border-bottom:1px solid #dfdfdf;}
+.likeltop img{margin-top:15px;}
+.likeltop1{margin-top:64px;font-size:35px;font-weight:bold;}
+.likeltop2{font-size:14px;color:#6c6c6c;margin-top:16px;margin-bottom:29px;}
+.likeltop3{font-size:22px;}
+.likelbottom-l{border-right:1px solid #dfdfdf;width:308px;}
+.likelbottom-l p{ padding-left:32px; padding-top:27px; line-height:24px; margin-bottom:20px;font-size:14px;}
+.likelbottom-l img{margin-left:82px;}
+.likelbottom-r{border-right:1px solid #dfdfdf;width:308px;}
+.likelbottom-r p{ padding-left:32px; padding-top:27px; line-height:24px; margin-bottom:20px;font-size:14px;}
+.likelbottom-r img{margin-left:82px;}
+.liker{width:308px;}
+.liker dt span{color:#000;}
+.liker dt{height:100px;border-bottom:1px solid #dfdfdf;padding-left:30px;font-size:26px;color:#ff4a00;height:100px;line-height:100px;}
+.liker dd{height:100px;border-bottom:1px solid #dfdfdf;padding-left:30px;}
+.num{margin-right:20px;margin-top:32px; font-size:31px;color:#ff4a00;}
+.shop p{width:140px;font-size:15px;}
+.name {margin-top:32px;margin-bottom:10px;}
+.liker dd img{margin-top:16px;}
+ /*内容结束*/
+ 
+ /*尾部开始*/
+ .footer{background:#fafafa;}
+ .footercon{width:930px;margin:0 auto;}
+ .service{border-bottom:1px solid #dfdfdf;height:152px;}
+ .service li{float:left;width:186px;height:152px;position:relative;}
+ .service li img{position:absolute;left:50%;top:47px;margin-left:-21px;}
+ .service li p{font-size:16px;position:absolute;left:50%;top:95px;margin-left:-52px;}
+ .guild{border-bottom:1px solid #dfdfdf;height:197px;}
+ .guild li{width:130px;height:120px;border-right:1px solid #dfdfdf;padding-left:17px;margin-top:40px;float:left;}
+ .guild .guildlast{height:120px;border-right:none;width:173px;}
+ .guild dt{margin:6px 0 13px;font-size:18px;}
+ .guild dd{line-height:26px;font-size:12px;color:#6d6d6d;}
+ .guildlast1{font-size:22px;font-weight:bold;}
+ .guildlast2{font-size:12px;color:#6d6d6d;margin:14px 0 11px;}
+  .guildlast3{font-size:12px;color:#6d6d6d;width:145px; text-align:center;}
+  .guildlast4{font-size:12px;color:#fff;width:121px;height:30px;background:#ff4a00; text-align:center;line-height:30px;margin-top:20px;}
+ .footernav{margin:39px 0 20px;color:#5e7d7d;font-size:11px;}
+  .footernav ul{margin-bottom:8px;}
+  .footernav li{float:left;padding:0 5px;border-right:1px solid #5e7d7d;}
+  .footernav .fnfirst{padding-left:0;}
+ .footernav .fnlast{border-right:none;}
+ .fimg{margin-top:22px;}
+ /*尾部结束*/
+ 
+ 

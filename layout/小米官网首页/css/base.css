@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ padding:0; margin:0; line-height:100%;}/*也可以放入body里面，100%的好处是根据字体大小，改变行高，使字体正常展示*/
+body{ font-size:12px;font-family:'Micrsoft Yahei'}
+a{color:#000; text-decoration:none;}
+img{vertical-align:top;}
+li{ list-style:none;}
+h1,h2,h3,h4,h5,h6,b,strong{ font-weight:normal; font-size:100%;}/*字体取*或者body命名的，因为标签有默认样式所以字体大小不继承*/
+i,em{ font-style:normal;}/*取消倾斜*/
+a img{border:none}/*所有a标签里的img都有一个默认边框*/
+.clearfix:after{ display:block; clear:both; content:'';}/*清浮动，给所有浮动的父级命名clearfix*/
+.fl{float:left}
+.fr{float:right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
