@@ -9,22 +9,11 @@
 <script src="js/tween.js"></script>
 <script src="js/move.js"></script>
 <script src="js/head.js"></script>
-<script src="js/scrollmove.js"></script>
-
+<script src="js/sound.js"></script>
+<script src="js/h5.js"></script>
 </head>
 <body>
 <div id="j_box">
-	<!--<div id="bar_box">
-		<a  href="javascript:;" id="bar_pre">
-			<span></span>
-		</a>
-		<div id="bar">
-			<span></span>
-		</div>
-		<a href="javascript:;" id="bar_next">
-			<span></span>
-		</a>
-	</div>-->
 	<ul id="control">
 		<li>
 			<a href="javascript:;" class="control_active "></a>
@@ -37,6 +26,10 @@
 		<li>
 			<a href="javascript:;" ></a>
 			<span class="fr">js相关技能</span>
+		</li>
+		<li>
+			<a href="javascript:;" ></a>
+			<span class="fr">h5特效</span>
 		</li>
 		<li>
 			<a href="javascript:;" ></a>
@@ -59,6 +52,9 @@
 							</li>
 							<li>
 								<a href="#">js</a>
+							</li>
+							<li>
+								<a href="#">h5</a>
 							</li>
 						</ul>
 					</li>
@@ -83,6 +79,8 @@
 		<div class="css_skills clearfix">
 			<div class="fl">
 				<h3>skills</h3>
+				<p>拟美团首页</p>
+				<p>拟360导航</p>
 				<p>拟小米手机官网</p>
 				<p>拟蒙娜丽莎婚纱店官网</p>
 				<p>拟爱奇艺官网</p>
@@ -91,11 +89,13 @@
 			</div>
 			<div class="fr">
 				<h3>opus</h3>
-				<a href="layout/小米官网首页/小米.html">拟小米手机官网</a>
-				<a href="layout/蒙娜丽莎婚纱摄影/婚纱摄影.html">拟蒙娜丽莎婚纱店官网</a>
-				<a href="layout/爱奇艺/爱奇艺.html">拟爱奇艺官网</a>
-				<a href="layout/oppo手机官网/oppo手机官网.html">拟oppo手机官网</a>
-				<a href="layout/京东/京东首页.html">拟京东首页</a>
+				<a href="layout/meituan1/mei.html">拟美团首页</a>
+				<a href="layout/hao360/index.html">拟360导航</a>
+				<a href="layout/xiaomi/xiaomi.html">拟小米手机官网</a>
+				<a href="layout/monalisa/monalisa.html">拟蒙娜丽莎婚纱店官网</a>
+				<a href="layout/qiy/qiy.index.html">拟爱奇艺官网</a>
+				<a href="layout/oppo/oppo.index.html">拟oppo手机官网</a>
+				<a href="layout/JD/JD.html">拟京东首页</a>
 			</div>
 		</div>
 		<div class="js_skills">
@@ -107,61 +107,20 @@
 				<li>Modularize</li>
 				<li>MV* FrameWork</li>
 			</ul>
-			<ul class="skill_nav_con clearfix" id="j_skill_nav_con">
+			<ul class="skill_nav_con clearfix" id="j_skill_nav_con">	
 				<li>
 					<img src="images/js_b1.jpg"/>
 					<div class="js_skills_con">
-						简单微博效果
+						百度搜索模拟(jquery-单击查看demo)
 					</div>
 					<span>
-					</span>
-					<div class="znsArea">
-					<!--留言-->
-						 <div class="takeComment">
-							<textarea name="textarea" class="takeTextField" id="t1"></textarea>
-							<div class="takeSbmComment">
-								<input type="button" class="inputs" value="" id="btn1" />
-								<span>(可按 Enter 回复)</span>
-							</div>
-						</div>
-					<!--已留-->
-						<div class="commentOn">
-							<div class="messList" id="reply_box">
-								<!--<div class="reply">
-									<p class="replyContent">卫士，新款卫士将推出总共14种车身式样。其中， XS旅行款车型售价为32295英镑(约33.6万元)。</p>
-									<p class="operation">
-										<span class="replyTime">2011-09-08 16:37:60</span>
-										<span class="handle">
-											<a href="javascript:;" class="top">0</a>
-											<a href="javascript:;" class="down_icon">0</a>
-											<a href="javascript:;" class="cut">删除</a>
-										</span>
-									</p>
-								</div>-->
-							</div>
-							<div class="page" id="page_box">
-								<!--<a href="javascript:;" class="active">1</a>
-								<a href="javascript:;">2</a>
-								<a href="javascript:;">3</a>-->
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<img src="images/js_b2.jpg"/>
-					<div class="js_skills_con">
-						百度搜索模拟
-					</div>
-					<span>
-					</span>
-					
+					</span>	
 				</li>
 				<li>
 					<img src="images/js_b3.jpg"/>
 					<div class="js_skills_con">
 						简单微博效果
 					</div>
-					
 					<span>
 					</span>
 				</li>
@@ -170,34 +129,22 @@
 					<div class="js_skills_con">
 						苹果桌面菜单
 					</div>
-					
 					<span>
 					</span>
 				</li>
 				<li>
 					<img src="images/js_b5.jpg"/>
 					<div class="js_skills_con">
-						产品轮播图
+						产品轮播图(angular)
 					</div>
-					
 					<span>
 					</span>
 				</li>
 				<li>
 					<img src="images/js_b6.jpg"/>
 					<div class="js_skills_con">
-						运动：照片墙！
+						桌面菜单组合(原生JS)
 					</div>
-					
-					<span>
-					</span>
-				</li>
-				<li>
-					<img src="images/js_b5.jpg"/>
-					<div class="js_skills_con">
-						简单微博效果
-					</div>
-					
 					<span>
 					</span>
 				</li>
@@ -234,6 +181,63 @@
 			<div class="js_skills_back">
 			</div>
 		</div>
+		<div class="h5" >
+			<div class="h5_head clearfix">
+				<h3 class="fl"></h3>
+				<p class="fl h5tit">My H5 Skills</p>
+				<ul class="fl h5con" id="h5con">
+				   <li >
+				      	<span></span>
+						<p>h5标签</p>
+				   </li>
+				   <li >
+				      	<span></span>
+						<p>css3技巧</p>
+				   </li>
+				   <li >
+				      	<span></span>
+						<p>h5event</p>
+				   </li>
+				   <li >
+				      	<span></span>
+						<p>移动端布局</p>
+				   </li>
+				   <li >
+				      	<span></span>
+						<p>移动端框架</p>
+				   </li>
+				   <li>
+				      	<span></span>
+						<p>canvas</p>
+				   </li>
+				   <li>
+				      	<span></span>
+						<p>svg</p>
+				   </li>
+				   <li>
+				      	<span></span>
+						<p>特效展示</p>
+				   </li>
+				</ul>
+			</div>
+			<div class="clearfix h5conbox">
+				<div class="h5lbox fl">
+					<div class="h5lpage">
+						<div class="h5lfront"></div>
+						<div class="h5lback"></div>
+					</div>
+					<div class="h5lpage2"></div>
+					<p class="h5ltext">点击图片实现翻页</p>
+				</div>
+				<div class="h5r fl">
+					<div class="h5rbox"></div>
+					<p class="h5rtext">爆破式翻页效果</p>
+   				</div>
+			</div>
+			<div class="h5canvas">
+			 	<canvas id="h5canvas"></canvas>
+			</div>
+		</div>
 		<div id="self" >
 			<div>
 				<h2>董金玲</h2>
@@ -255,6 +259,7 @@
 				<p>5.熟悉模块化：sea.js，require.js</p>
 				<p>6.熟悉js面向对象的思想</p>
 				<p>7.熟悉mvc三层设计</p>
+				<p>8.熟悉h5相关</p>
 				<ul class="clearfix">
 					<li><p>T: 18510342229</p></li>							
 					<li><p><a href="mailto:example@email.com"> 

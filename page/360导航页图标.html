@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>360导航页图标拖动排序网页特效代码</title>
+<link rel="stylesheet" href="../css/base.css"/>
+<style>
+.head{height:100px;line-height:100px;background:#1e1e1e;}
+.keTitle { height: 100px; line-height: 100px; font-size: 30px; font-family: '微软雅黑'; color: #FFF; text-align: center;font-weight: normal }
+.keTitle span{font-size:16px;}
+.kePublic { background: #FFF; padding: 50px; }
+/* 效果CSS开始 */
+.item_content ul li { width: 200px; height: 120px; float: left; margin: 10px }
+.item_content { width:900px; _width:900px; height: 420px; border: 1px solid #ccc; margin: 0 auto; }
+.item_content .item { width: 200px; height: 120px; line-height: 120px; text-align: center; cursor: pointer; background: #ccc; }
+.item_content .item img { width: 200px; height: 120px; border-radius: 6px; }
+/* 效果CSS结束 */
+</style>
+    <script src="../js/base.js"></script>
+    <script src="../js/tween.js"></script>
+<script src="../js/move.js"></script>
+<script>
+    window.onload=function()
+    {
+        var oUl=document.getElementById('box');
+        var aLi=oUl.children;
+
+        var zIndex=1000;
+        //存储href信息，双击进入页面
+        var aHref=['http://www.youku.com/','https://www.jd.com/','https://www.taobao.com/','http://www.ifeng.com/','http://www.sohu.com/','http://www.163.com/','http://www.renren.com/','https://hao.360.cn/','http://wan.360.cn/','http://www.ifeng.com/']
+       for(var i=0;i<aLi.length;i++)
+       {
+           (function(index){
+               aLi[i].ondblclick=function()
+               {
+                   window.open(aHref[index])
+               }
+           })(i)
+       }
+        /*布局转化*/
+        var aPos=[];
+        for(var i=0; i<aLi.length; i++){
+            aPos[i]={
+                left:aLi[i].offsetLeft,
+                top:aLi[i].offsetTop
+            };
+        }
+        for(var i=0; i<aPos.length; i++){
+            aLi[i].style.left=aPos[i].left+'px';
+            aLi[i].style.top=aPos[i].top+'px';
+            aLi[i].style.position='absolute';
+            aLi[i].style.margin=0;
+            aLi[i].index=i;
+        }
+
+        //调用拖拽函数
+        for(var i=0; i<aLi.length; i++){
+            drag(aLi[i]);
+        }
+
+        /*拖拽函数*/
+        function drag(obj){
+            obj.onmousedown=function(ev){
+                var oEvent=ev || event;
+                var disX=oEvent.clientX-obj.offsetLeft;
+                var disY=oEvent.clientY-obj.offsetTop;
+
+                obj.style.zIndex=zIndex++;
+
+                document.onmousemove=function(ev){
+                    var oEvent=ev || event;
+                    obj.style.left=oEvent.clientX-disX+'px';
+                    obj.style.top=oEvent.clientY-disY+'px';
+
+                    //检测碰撞
+                    for(var i=0; i<aLi.length; i++){
+                        aLi[i].className='';
+                    }
+                    var oNear=findNearest(obj);
+                    if(oNear){
+                        oNear.className='box';
+                    }
+                };
+
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+
+                    var oNear=findNearest(obj);
+                    if(oNear){
+                        //换位置
+                        move(obj,aPos[oNear.index],{easing:Tween.Elastic.easeInOut,duration:500});
+                        move(oNear,aPos[obj.index],{easing:Tween.Elastic.easeInOut,duration:500});
+                        oNear.className='';
+                        var tmp;
+                        tmp=obj.index;
+                        obj.index=oNear.index;
+                        oNear.index=tmp;
+                    }else{
+                        //回到你的位置
+                        move(obj,aPos[obj.index],{easing:Tween.Elastic.easeInOut,duration:500});
+                    }
+                };
+                return false;
+            };
+        }
+        /*找离物体最近的li*/
+        function findNearest(obj){
+            var iMin=999999999999;
+            var iMinIndex=-1;
+            for(var i=0; i<aLi.length; i++){
+                if(obj==aLi[i])continue; //?
+                if(collTest(obj,aLi[i])){
+                    var dis=getDis(obj,aLi[i]);
+
+                    if(dis<iMin){
+                        iMin=dis;
+                        iMinIndex=i;
+                    }
+                }
+            }
+            if(iMinIndex==-1){
+                return null;
+            }else{
+                return aLi[iMinIndex];
+            }
+        }
+        /*求距离*/
+        function getDis(obj,obj2){
+            var l1=obj.offsetLeft+obj.offsetWidth/2;
+            var l2=obj2.offsetLeft+obj2.offsetWidth/2;
+
+            var t1=obj.offsetTop+obj.offsetHeight/2;
+            var t2=obj2.offsetTop+obj2.offsetHeight/2;
+
+            var a=l1-l2;
+            var b=t1-t2;
+
+            return Math.sqrt(a*a+b*b);
+        }
+        /*碰撞检测函数*/
+        function collTest(obj,obj2){
+            var l1=obj.offsetLeft;
+            var r1=obj.offsetLeft+obj.offsetWidth;
+            var t1=obj.offsetTop;
+            var b1=obj.offsetTop+obj.offsetHeight;
+
+            var l2=obj2.offsetLeft;
+            var r2=obj2.offsetLeft+obj2.offsetWidth;
+            var t2=obj2.offsetTop;
+            var b2=obj2.offsetTop+obj2.offsetHeight;
+
+            if(r1<l2 || l1>r2 || b1<t2 || t1>b2){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    }
+</script>
+</head>
+<body >
+	<div class="head">
+    	<h1 class="keTitle">360导航页图标拖动排序网页特效代码<span>(双击图标可进入相关网页)</span></h1>
+	</div>
+    <div class="kePublic">
+        <div class="item_content">
+            <ul id="box">
+                <li>
+                    <div class="item">
+                        <img src="../images/youku.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/jd.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/taobao.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/fenghuan.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/souhu.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/wangyi.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/renren.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/360.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/360game.png" />
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <img src="../images/jia.png" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--效果html结束-->
+    </div>
+</body>
+</html>

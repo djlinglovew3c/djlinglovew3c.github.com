@@ -35,7 +35,6 @@ $(function(){
 	//获取所用元素
 	var oBox=document.getElementById('j_box');
 	var oH=document.documentElement.clientHeight;
-	//document.title=oH
 	oBox.style.height=oH+'px';
 	//点击左侧控制台，控制页面
 	var oControl=document.getElementById('control');
@@ -63,6 +62,7 @@ $(function(){
 				this.className='control_active';
 				nBtn=index;
 				move(oCon,{top:-oH*index},{duration:300})
+				toShowH5List();
 				if(nBtn==aControlBtn.length-1)
 				{
 					move(aPersonalContact[0],{left:0},{duration:500})
@@ -97,110 +97,6 @@ $(function(){
 		nHead++;
 		},500)
 		
-
-	/*//自定义滚动条
-	var oBarBox=document.getElementById('bar_box');
-	oBarBox.style.height=oH+'px';
-	var oBar=document.getElementById('bar');
-	var oBarPre=document.getElementById('bar_pre');
-	var oBarPreBtn=oBarPre.children[0]; 
-	var oBarNext=document.getElementById('bar_next');
-	var oBarNextBtn=oBarNext.children[0]; 
-	var oBarH=oH-oBarPre.offsetHeight*2;
-	var nCount=0;
-	oBar.style.height=oBarH+'px';
-	var top=0;
-	//计算滚动条的高度
-	var oBarBtn=oBar.children[0];
-	var oBarBtnH=oBarH/aPage.length;
-	oBarBtn.style.height=oBarBtnH+'px';
-	//拖拽滚动条
-	var maxBarTop=oBarH-oBarBtnH;
-	oBarBtn.onmousedown=function(ev){
-		var oEvent=ev||event;
-		var oBarBtnT=oBarBtn.offsetTop;
-		var disY=oEvent.clientY-oBarBtnT;
-		oBarBtn.style.backgroundColor='#8d8d8e';
-		oBarBtn.style.borderColor='#787878';
-		document.onmousemove=function(ev){
-			var oEvent=ev||event;
-			top=oEvent.clientY-disY;
-			setTop();
-		};
-		document.onmouseup=function()
-		{
-			//alert('top'+top+' '+'点击高'+oBarBtnT)
-			if(top>oBarBtnT&&Math.abs(top-oBarBtnT)>5)
-			{
-				nCount=Math.ceil((top/maxBarTop)*(aPage.length-1));
-			}
-			else if(top<oBarBtnT&&Math.abs(top-oBarBtnT)>5)
-			{
-				nCount=Math.floor((top/maxBarTop)*(aPage.length-1));
-			}
-			move(oCon,{top:-oH*nCount},{duration:300})
-			//页面的top值控制控制台按钮
-			for(var i=0;i<aControlBtn.length;i++)
-			{
-				aControlBtn[i].className='';
-			}
-			aControlBtn[nCount].className='control_active';
-			document.onmousemove=null;	
-			document.onmouseup=null;
-			oBarBtn.style.backgroundColor='#bcbcbc';
-			oBarBtn.style.borderColor='#a8a8a8';
-			oBarBtn.releaseCapture&&oTBox.releaseCapture();
-		}
-		return false;
-		oBarBtn.setCapture&&oTBox.setCapture();
-	};*/
-	/*function setTop(){
-		if(top<=0)
-		{
-			top=0;
-			oBarPreBtn.style.borderBottomColor='#a3a3a3';
-		}
-		else if(top>=maxBarTop)
-		{
-			top=maxBarTop;
-			oBarNextBtn.style.borderTopColor='#a3a3a3';
-		}
-		else
-		{
-			oBarPreBtn.style.borderBottomColor='#505050';
-			oBarNextBtn.style.borderTopColor='#505050';
-		}
-		oBarBtn.style.top=top+'px';
-		var scale=top/maxBarTop;
-		//move(oCon,{top:-oH*index},{duration:300})
-		oCon.style.top=-(oH*aPage.length*scale)+'px';
-	};*/
-	//定义初始状态
-	/*var bPre=false;
-	var bNext=false;*/
-	
-	
-	/*//上下按钮控制
-	oBarPre.onmousedown=function(){
-		oBarPreBtn.style.borderBottomColor='#fff';
-		oBarPre.style.backgroundColor='#787878';
-		bPre=true;	
-	};
-	oBarNext.onmousedown=function(){
-		oBarNextBtn.style.borderTopColor='#fff';
-		oBarNext.style.backgroundColor='#787878';
-		bNext=true;	
-	};
-	oBarPre.onmouseup=function(){
-		oBarPreBtn.style.borderBottomColor='#505050';
-		oBarPre.style.backgroundColor='#d2d2d2';
-		bPre=false;	
-	};
-	oBarNext.onmouseup=function(){
-		oBarNextBtn.style.borderTopColor='#505050';
-		oBarNext.style.backgroundColor='#d2d2d2';
-		bNext=false;	
-	};*/
 	var top=0;
 	function toUpFn()
 	{	
@@ -211,6 +107,7 @@ $(function(){
 		}//用临时变量存值，临界值不用改变全局变量的值
 		move(oCon,{top:-oH*(nB-1)},{duration:300,complete:function(){
 				nBtn--;
+				toShowH5List();
 				if(nBtn<=0)
 				{
 					nBtn=0;	
@@ -237,6 +134,7 @@ $(function(){
 				move(aPersonalContact[1],{right:0},{duration:500})
 			}
 			nBtn++;
+			toShowH5List();
 			if(nBtn>=aControlBtn.length-1)
 			{
 				nBtn=aControlBtn.length-1;	
@@ -249,18 +147,6 @@ $(function(){
 		}
 		aControlBtn[nB+1].className='control_active';
 	}
-	/*var toUp=false;
-	var toDown=false;
-	setInterval(function(){
-		 if(toUp)
-		{
-			toUpFn();
-		}
-		else if(toDown)
-		{
-			toDownFn();
-		}
-	},400);*/
 	//滚轮控制
 	addWheel(document,function(down){//注意滚轮操作的对象！
 	
@@ -274,19 +160,6 @@ $(function(){
 		}
 		
 	});
-	//上下键控制
-	/*document.onkeydown=function(ev){
-		top=oCon.offsetTop;
-		var oEvent=ev||event;
-		if(oEvent.keyCode==38)
-		{
-			toUp=true;
-		}
-		else if(oEvent.keyCode==40)
-		{
-			toDown=true;
-		}
-	};*/
 	document.onkeyup=function(ev){
 		top=oCon.offsetTop;
 		var oEvent=ev||event;
@@ -323,6 +196,7 @@ $(function(){
 									nBtn=index+1;
 									aControlBtn[index+1].className='control_active';
 									move(oCon,{top:-oH*(index+1)},{duration:300})
+									toShowH5List();
 									if(nBtn==aControlBtn.length-1)
 									{
 										move(aPersonalContact[0],{left:0},{duration:500})
@@ -355,6 +229,7 @@ $(function(){
 				nBtn=index;
 				aControlBtn[index].className='control_active';
 				move(oCon,{top:-oH*index},{duration:300})
+				toShowH5List();
 				if(nBtn==aControlBtn.length-1)
 				{
 					move(aPersonalContact[0],{left:0},{duration:500})
@@ -371,9 +246,10 @@ $(function(){
 				{
 					aControlBtn[i].className='';
 				}
-				nBtn=index+1;
-				aControlBtn[index+1].className='control_active';
-				move(oCon,{top:-oH*(index+1)},{duration:300})
+				nBtn=index+2;
+				aControlBtn[index+2].className='control_active';
+				move(oCon,{top:-oH*(index+2)},{duration:300})
+				toShowH5List();
 				if(nBtn==aControlBtn.length-1)
 				{
 					move(aPersonalContact[0],{left:0},{duration:500})
@@ -382,8 +258,6 @@ $(function(){
 			};
 		})(i)
 	}
-	
-	
 	//JS tit的选项卡
 	var oJsnav=document.getElementById('j_skill_nav');
 	var aJsnav=oJsnav.children;
@@ -489,8 +363,6 @@ $(function(){
 	{
 		return d*180/Math.PI;
 	}
-	
-	
 	//js 案例部分最后一部分的时钟效果
 	tick();
 	setInterval(tick, 1000);
@@ -536,5 +408,66 @@ $(function(){
 		aControlBtn[nBtn].className='control_active';
 		move(oCon,{top:-oH*nBtn},{duration:300})
 	}
+	//h5网页技巧
+	//钢琴效果
+	 var pianoUl=document.getElementById('h5con');
+	 var aPianoLi=pianoUl.children;
+	 var bH5Flag=true;
+	 function toShowH5List(){
+		 if(nBtn == (aControlBtn.length-3))
+		 { 
+		 	if(bH5Flag){
+			var iH=0;
+			var timerh5=setInterval(function(){
+				var oSpan=aPianoLi[iH].getElementsByTagName('span')[0];
+				oSpan.style.animation='0.3s test1 linear forwards,0.1s test2 linear forwards 0.4s';
+				var oAH5=new Audio();
+				oAH5.src=oggSound['sound'+(iH+49)];
+				oAH5.play();
+				iH++;
+				if(iH>=aPianoLi.length||nBtn!=(aControlBtn.length-3))
+				{
+					clearInterval(timerh5);
+				}
+			},400)
+			 bH5Flag=false;
+			}
+			 for(var i=0;i<aPianoLi.length;i++)
+			 {
+				 (function(index){
+					aPianoLi[i].onmouseover=function(){
+						clearInterval(timerh5);
+						var oSpan=this.getElementsByTagName('span')[0];
+						oSpan.style.animation='0.1s test1 linear forwards';
+						var oA=new Audio();
+						oA.src=oggSound['sound'+(index+49)];
+						oA.play();
+					};
+					aPianoLi[i].onmouseout=function(){
+						var oSpan=this.getElementsByTagName('span')[0];
+						oSpan.style.animation='0.2s test2 linear forwards';
+					};
+				})(i);
+			 }
+			 //点击键盘，操作钢琴键
+			  function h5KeyDown(ev){ 
+				clearInterval(timerh5);
+				if(ev.keyCode>=49 && ev.keyCode<=56){
+					var oA=new Audio();
+					oA.src=oggSound['sound'+ev.keyCode];
+					oA.play();
+					aPianoLi[ev.keyCode-49].getElementsByTagName('span')[0].style.animation='0.1s test1 linear forwards';	
+				 }
+			 };
+			 function h5KeyUp(ev){
+				if(ev.keyCode>=49 && ev.keyCode<=56){
+					var oSpan=aPianoLi[ev.keyCode-49].getElementsByTagName('span')[0];
+					oSpan.style.animation='0.2s test2 linear forwards';      
+				}
+			};
+			 addEvent(document,'keydown',h5KeyDown);
+			 addEvent(document,'keyup',h5KeyUp);
+		 } 
+	};
 	return false;
 });
