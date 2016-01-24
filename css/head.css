@@ -181,8 +181,8 @@ position:relative;}
 .h5rtext{height:50px;width:180px;left:50%;margin:10px auto 0;line-height:50px;background:#399;text-align:center;color:#434a54;}
 
 /*画图效果*/
-.h5canvas{width:1050px;margin:0 50px;;border:4px solid #434a54;height:160px;}
-.h5canvas canvas{width:1050px;height:160px;background:#fff;}
+.h5canvas{width:680px;margin:0 50px;;border:4px solid #434a54;height:120px;}
+.h5canvas canvas{width:680px;height:120px;background:#fff;}
 /*个人简介*/
 #self{background:url(../images/banner-1.jpg);overflow:hidden;}
 #self>div{padding-top:30px;width:45%;text-align:center;color:#434a54;margin-left:30%;}
