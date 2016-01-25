@@ -24,35 +24,23 @@ window.onload=function (){
 	oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
 	
 	var w=oUl.offsetWidth/2;
-	var timer=setInterval(function (){
-			left-=520;
-			
-			if (left < 0)
-			{
-				oUl.style.left=left%w+'px';
-			}
-			else
-			{
-				oUl.style.left=left%w-w+'px';
-			}
-		}, 1500);
+	var timer=setInterval(tick,1500);
 	oUl.onmouseover=function(){
 		clearInterval(timer)
 	};
 	oUl.onmouseout=function(){
-		clearInterval(timer)
-		timer=setInterval(function (){
-			left-=520;
-			
-			if (left < 0)
-			{
-				oUl.style.left=left%w+'px';
-			}
-			else
-			{
-				oUl.style.left=left%w-w+'px';
-			}
-		}, 1500);
+		timer=setInterval(tick,1500);
+	};
+	function tick(){
+		left-=520;	
+		if (left < 0)
+		{
+			oUl.style.left=left%w+'px';
+		}
+		else
+		{
+			oUl.style.left=left%w-w+'px';
+		}
 	};
 	var oNext=document.getElementById('next');
 	oNext.onclick=function(){
