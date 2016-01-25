@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>苹果菜单</title>
+<style>
+* { margin:0; padding:0; }
+body{background:#399;}
+#div1 { position:absolute; bottom:200px; left:0; width:100%; text-align:center; }
+img { width:64px; height:64px; margin:0 20px;}
+</style>
+<script>
+window.onload=function (){
+	var aImg=document.getElementsByTagName('img');
+	var oDiv=document.getElementById('div1');
+	
+	document.onmousemove=function (ev){
+		var oEvent=ev || event;
+		for (var i=0; i<aImg.length; i++)
+		{
+			var a=oEvent.clientX-(aImg[i].offsetLeft+aImg[i].offsetWidth/2);
+			var b=oEvent.clientY-(aImg[i].offsetTop+oDiv.offsetTop+aImg[i].offsetHeight/2);
+			
+			var c=Math.sqrt(a*a+b*b);
+			// 感应距离
+			var scale=(1-c/500).toFixed(2);
+			
+			(scale<0.5) && (scale=0.5);
+			
+			aImg[i].style.width=scale*128+'px';
+			aImg[i].style.height=scale*128+'px';
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+	<div id="div1">
+		<img src="../images/app1.png" />
+		<img src="../images/app2.png" />
+		<img src="../images/app3.png" />
+		<img src="../images/app4.png" />
+		<img src="../images/app5.png" />
+	</div>
+</body>
+</html>

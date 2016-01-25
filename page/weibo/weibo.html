@@ -1,0 +1,119 @@
+﻿<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe.com</title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+<script src="angular.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    app.controller('weiboCtrl',function($scope,$http){
+        $scope.data=[];
+        $scope.pageCount=[];
+        $scope.currentPage=1;
+
+        var URL='weibo.php';
+
+        //添加一条
+        $scope.add=function(){
+            $http.get(URL,{params:{act:'add',content:$scope.content}})
+            .success(function(data){
+                $scope.data.unshift({
+                    content:$scope.content,
+                    time:data.time*1000,
+                    acc:0,
+                    ref:0,
+                    id:data.id
+                });
+
+                $scope.content='';
+            })
+        };
+
+        //获取某一页数据
+        function getPageData(n){
+            $scope.currentPage=n;
+
+            $http.get(URL,{params:{
+                act:'get',
+                page:n
+            }})
+            .success(function(data){
+                //$scope.data=data;
+                angular.forEach(data,function(value,key){
+                    $scope.data[key]={
+                        content:value.content,
+                        time:value.time*1000,
+                        acc:value.acc,
+                        ref:value.ref,
+                        id:value.id
+                    }
+                });
+            });
+        }
+        getPageData(1);
+
+        $scope.getPageData=getPageData;
+
+        //获取页数
+        function getPageCount(){
+            $http.get(URL,{params:{
+                act:'get_page_count'
+            }})
+            .success(function(data){
+                var n=data.count;
+                for(var i=0; i<n; i++){
+                    $scope.pageCount[i]=i+1;
+                }
+            });
+        }
+        getPageCount();
+
+        //顶
+        $scope.top=function(index,id){
+            $http.get(URL,{params:{
+                act:'acc',
+                id:id
+            }})
+            .success(function(data){
+                $scope.data[index].acc+=1;
+            });
+        };
+    });
+</script>
+</head>
+
+<body>
+<div class="znsArea" ng-controller="weiboCtrl">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="tijiaoText" ng-model="content"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" ng-click="add()" />
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <div class="noContent" ng-show="data.length==0">暂无留言</div>
+        <div class="messList">
+        	<div class="reply" ng-repeat="item in data">
+                <p class="replyContent">{{item.content}}</p>
+                <p class="operation">
+                    <span class="replyTime">{{item.time|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                    <span class="handle">
+                    	<a ng-click="top($index,item.id)" href="javascript:;" class="top">{{item.acc}}</a>
+                        <a href="javascript:;" class="down_icon">{{item.ref}}</a>
+                        <a href="javascript:;" class="cut">删除</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="page">
+        	<a ng-repeat="i in pageCount" href="javascript:;" ng-class="{active:i==currentPage}" ng-click="getPageData($index+1)">{{i}}</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

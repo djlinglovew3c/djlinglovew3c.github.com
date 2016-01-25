@@ -383,6 +383,16 @@ $(function(){
 			move(aClockSpan[i], {'top':target},{duration:200});
 		}
 	}
+	//js案例点击进入相应页
+	var arrJsDemo=['page/baidu.html','page/weibo/weibo.html','page/app_desk.html','page/slideshow.html','page/360nav_ico.html','page/countdown.html']
+	for(var i=0;i<aJscon.length;i++)
+	{
+	    ;(function(index){
+			aJscon[i].onclick=function(){
+				window.open(arrJsDemo[index],'_blank')	
+			};
+		})(i);
+	}
 	//联系方式页：信息运动入
 	var oPersonalContact=document.getElementById('personal');
 	var aPersonalContact=oPersonalContact.children;

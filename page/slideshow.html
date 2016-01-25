@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+* { margin:0; padding:0; }
+div { overflow:hidden; position:relative; width:520px; height:280px; border:1px solid red; margin:50px auto; }
+ul { position:absolute; top:0; left:0; }
+li { list-style:none; float:left; width:520px; height:280px;}
+img { display:block; width:100%; }
+
+a { position:absolute; height:50px; width:50px;}
+#next { right:0; top:50%;margin-top:-25px;background:url(../images/arrow_r.png)}
+#prev { left:0; top:50%;margin-top:-25px;background:url(../images/arrow_l.png)}
+</style>
+<script>
+window.onload=function (){
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	var left=0;
+	
+	oUl.innerHTML+=oUl.innerHTML;
+	oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+	
+	var w=oUl.offsetWidth/2;
+	var timer=setInterval(function (){
+			left-=520;
+			
+			if (left < 0)
+			{
+				oUl.style.left=left%w+'px';
+			}
+			else
+			{
+				oUl.style.left=left%w-w+'px';
+			}
+		}, 2000);
+	oUl.onmouseover=function(){
+		clearInterval(timer)
+	};
+	oUl.onmouseout=function(){
+		clearInterval(timer)
+		timer=setInterval(function (){
+			left-=520;
+			
+			if (left < 0)
+			{
+				oUl.style.left=left%w+'px';
+			}
+			else
+			{
+				oUl.style.left=left%w-w+'px';
+			}
+		}, 2000);
+	};
+	var oNext=document.getElementById('next');
+	oNext.onclick=function(){
+		left+=520;	
+		if (left < 0)
+		{
+			oUl.style.left=left%w+'px';
+		}
+		else
+		{
+			oUl.style.left=left%w-w+'px';
+		}
+	}
+	var oPrev=document.getElementById('prev');
+	oPrev.onclick=function (){
+		left-=520;
+		if (left < 0)
+		{
+			oUl.style.left=left%w+'px';
+		}
+		else
+		{
+			oUl.style.left=left%w-w+'px';
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+	<div>
+		<ul id="ul1">
+			<li><img src="../images/tb1.jpg"></li>
+			<li><img src="../images/tb2.jpg"></li>
+			<li><img src="../images/tb3.jpg"></li>
+			<li><img src="../images/tb4.jpg"></li>
+		</ul>
+		
+		<a href="javascript:;" id="prev"></a>
+		<a href="javascript:;" id="next"></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品倒计时</title>
+<style>
+input { display:block; width:300px; height:50px; margin:100px auto; background:#399;font-size:20px;outline:none;border:none;}
+</style>
+<script>
+window.onload=function(){
+	var oBtn=document.getElementById('btn');
+	var bFlag=false;
+	oBtn.onclick=function()
+	{
+		var n=5;
+		if(bFlag)
+		{
+			return;	
+		}
+		bFlag=true;
+		tick();
+		var timer=setInterval(tick,1000);
+		function tick()
+		{
+			if(n>0)	
+			{
+				oBtn.value=n+'秒后，重新发送';
+				n--;	
+			}
+			else
+			{
+				clearInterval(timer);
+				oBtn.value='重新发送';
+			 	bFlag=false;
+			}
+		};
+	};
+	
+};
+</script>
+</head>
+
+<body>
+	<input type="button" value="点击发送" id="btn" />
+</body>
+</html>
